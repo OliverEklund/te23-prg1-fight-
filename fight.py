@@ -12,7 +12,7 @@ player_1_health = 15
 player_1_to_hit = 3
 
 print(f"{player_1_name}'s förmågor är 3 skada, 3+ för att träffa och har 15 hälsa")
-print(f"{player_1_name} kommer gå emot en slime med 10 hälsa och som gör 2 damage")
+print(f"{player_1_name} kommer gå emot en slime med 10 hälsa och som gör 2 damage och träffar på 3 eller över")
 
 player_2_health = 10
 player_2_damage = 2
@@ -37,6 +37,34 @@ while round_status == "J":
             print(f"{player_1_name} missar")
     
     if player_one_action == "2":
-        print(f"")
+        print(f"{player_1_name} använder sin sköld för att skydda från den nästa attacken.")
+        player_1_dodge = randint(1,6)
     
-    round_status = input("skriv J för nästa runda: ")
+    if player_one_action == "3":
+        print(f"{player_1_name} aktiverar sin bomb vest och sprängs och dödar allting inom 20 meter")
+        round_status = "N"
+    
+    print(f"Slimen attakerar {player_1_name} genom att skjuta spikar på dom.")
+    player_two_roll = randint(1,6)
+    
+    if player_one_action == "2" and player_1_dodge >= 3:
+        print(f"slimens attack är blokerad av {player_1_name}")
+        
+    elif player_two_roll >= 4:
+        print(f"Slimens spik träffer {player_1_name} och gör {player_2_damage}")
+        player_1_health -= player_2_damage
+        print(f"{player_1_name} har {player_1_health} hälsa kvar")
+    else:
+        print("Slimen missar")
+
+
+    if player_1_health <= 0:
+        print(f"slimen vann genom att döda {player_1_name}")
+        round_status = "N"
+    
+    if player_2_health <= 0:
+        print(f"{player_1_name} van genom att döda slimen")
+        round_status = "N"
+    
+    else:
+         round_status = input("Redo för nästa runda? Skriv J: ")
