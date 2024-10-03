@@ -7,6 +7,9 @@ player_1_name = input(f"Spelare 1, skriv ditt namn: ")
 #print("tjuv, 3+ för att träffa, 1 skada, 3+ för att undvika skada, 8 hälsa")
 #print("Suicide Bomber")
 
+#Ide för nästa lektion: man har en variabel som är en 1d6. om resultatet är högre än fiendens attack slag så undiver man attacken.
+# Man kan använda block för höja chansen att undvika!
+
 player_1_damage = 3
 player_1_health = 15
 player_1_to_hit = 3
