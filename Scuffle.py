@@ -94,7 +94,7 @@ while round_status == "J":
         player_2_armor == randint(3,6) + 2
         player_2_damage = 0
     
-        if player_2_action =="5":
+    if player_2_action =="5":
         player_2_damage = player_2_special_damage
         player_2_armor = player_2_special_armor
     
